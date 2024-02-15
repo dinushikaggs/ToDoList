@@ -32,29 +32,31 @@ const App = () => {
   return (
     <main>
       <div className="container">
-        <h1 className="title">ToDo App</h1>
+        <h1 className="title">The ToDo List</h1>
 
         <div className="input_holder">
           <input
             value={input}
             onChange={(e) => setInput(e.target.value)}
             type="text"
-            placeholder="Add a ToDo..."
+            placeholder="Add a ToDo"
           />
           <button onClick={saveToDo}>Add</button>
         </div>
 
-        <div className="list">
-          {toDos.map((el) => (
-            <ToDo
-              key={el._id}
-              text={el.toDo}
-              id={el._id}
-              setUpdateUI={setUpdateUI}
-              setShowPopup={setShowPopup}
-              setPopupContent={setPopupContent}
-            />
-          ))}
+        <div className="container">
+          <div className="list">
+            {toDos.map((el) => (
+              <ToDo
+                key={el._id}
+                text={el.toDo}
+                id={el._id}
+                setUpdateUI={setUpdateUI}
+                setShowPopup={setShowPopup}
+                setPopupContent={setPopupContent}
+              />
+            ))}
+          </div>
         </div>
       </div>
       {showPopup && (

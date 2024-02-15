@@ -10,7 +10,7 @@ module.exports.saveToDo = (req, res) => {
 
   ToDoModel.create({ toDo })
     .then((data) => {
-      console.log("Saved Successfully...");
+      console.log("ToDo Saved...");
       res.status(201).send(data);
     })
     .catch((err) => {
@@ -38,7 +38,7 @@ module.exports.deleteToDo = (req, res) => {
 
   ToDoModel.findByIdAndDelete(id)
     .then(() => {
-      res.send("Deleted Successfully....");
+      res.send("ToDo Deleted Successfully....");
     })
     .catch((err) => {
       console.log(err);
